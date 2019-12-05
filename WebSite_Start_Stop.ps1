@@ -37,34 +37,41 @@ LogWrite "Web Site Stoping"
 function StartStopWebSite {
     param( [string] $site )
 
-    if($webSiteStartStop.ToUpper() -eq "STOP"){
+    if($webSiteStartStop.ToUpper() -eq "STOP")
+    {
         Write-Host "Stoping $site..." -NoNewline
         LogWrite "Stoping $site..." 
         $currentState = Get-Website | Where-Object {$_.State -eq "Started" -and $_.Name -eq $site } | Select-Object State
 
-        If($currentState.state -eq "Started"){
+        If($currentState.state -eq "Started")
+        {
             Stop-Website $site
             $currentState = Get-Website | Where-Object {$_.State -eq "Started" -and $_.Name -eq $site  } | Select-Object State
     
-            If(-not $currentState.state -eq "Started"){
+            If(-not $currentState.state -eq "Started")
+            {
                 Write-Host "Stoped!" -ForegroundColor Green
                 LogWrite "Stoped!"
             }
-            else{
+            else
+            {
                 Write-Host "Please check somethig went wrong!" -ForegroundColor Red
                 LogWrite "Please check somethig went wrong!!" $true
             }
         }
-        else{
+        else
+        {
             Write-Host "Already Stoped!" -ForegroundColor Green
             LogWrite "Already Stoped!"
         }
     }
-    if($webSiteStartStop.ToUpper() -eq "START"){
+    if($webSiteStartStop.ToUpper() -eq "START")
+    {
         Write-Host "Starting $site..." -NoNewline
         $currentState = Get-Website | Where-Object {$_.State -eq "Started" -and $_.Name -eq $site } | Select-Object State
 
-        If(-not $currentState.state -eq "Started"){
+        If(-not $currentState.state -eq "Started")
+        {
             Start-Website $site
             $currentState = Get-Website | Where-Object {$_.State -eq "Started" -and $_.Name -eq $site  } | Select-Object State
 

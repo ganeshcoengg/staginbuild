@@ -13,7 +13,7 @@ describe('To do login to Connect Plus', function() {
 
 	browser.waitForAngularEnabled(false);
     browser.driver.manage().window().maximize();
-	browser.driver.get('http://test2017.officebox.local/ap/frmLogin.aspx');
+	browser.driver.get('http://relerp.officebox.local/ap/frmLogin.aspx');
 	
 	//var a = element(by.id('txtUserName'));
 	//var b = element(by.id('txtPsswrd'));

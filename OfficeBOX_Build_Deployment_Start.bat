@@ -1,1 +1,0 @@
-Powershell.exe -executionpolicy remotesigned -File  Officebox_BuildDeployment.ps1

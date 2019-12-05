@@ -46,7 +46,7 @@ function LogWrite {
     }
     Add-Content $logfile -Value $string
 }
-Function ExecuteSchemaScripts{
+Function ExecuteSchemaDataScripts{
     param([String] $SchemaScript,
         [string] $DatabaseName
     )
@@ -102,7 +102,7 @@ foreach($AdminDBName in $ADMINDATABASE){
     $AdminDataScript = "$logfolder\ADMIN_DATA.sql"
     $AdminCustomerScript = "$logfolder\CUSTOMER_ADMIN_DATA_SCRIPT.sql"
     if(Test-Path -Path $AdminSchemaScript){
-        ExecuteSchemaScripts $AdminSchemaScript $AdminDBName.ADMIN
+        ExecuteSchemaDataScripts $AdminSchemaScript $AdminDBName.ADMIN
     }
     else {
         Write-Host "ADMIN_SCHEMA.sql Script are not available to Execute"
@@ -128,7 +128,7 @@ foreach($SADBName in $SADATABASE){
     $SADataScript = "$logfolder\SA_DATA.sql"
     $SACustomerScript = "$logfolder\CUSTOMER_SA_DATA_SCRIPT.sql"
     if(Test-Path -Path $SASchemaScript){
-        ExecuteSchemaScripts $SASchemaScript $SADBName.SA
+        ExecuteSchemaDataScripts $SASchemaScript $SADBName.SA
     }
     else {
         Write-Host "ADMIN_SCHEMA.sql Script are not available to Execute"
@@ -140,7 +140,7 @@ foreach($SADBName in $SADATABASE){
         Write-Host "ADMIN_DATA.sql Script are not available to Execute"
     }
     if(Test-Path -Path $SACustomerScript ){
-        ExecuteDataScript $SACustomerScript $SADBName.SA
+        ExecuteDataScript $SACustomerScript $SADBName.ADMIN
     }
     else{
         Write-Host "Customer wise SA Data Script are not available to Execute" -ForegroundColor Yellow
@@ -154,7 +154,7 @@ foreach($STDBName in $STDATABASE){
     $STDataScript = "$logfolder\ST_DATA.sql"
 
     if(Test-Path -Path $STSchemaScript){
-        ExecuteSchemaScripts $STSchemaScript $STDBName.ST
+        ExecuteSchemaDataScripts $STSchemaScript $STDBName.ST
     }
     else{
         Write-Host "ST_SCHEMA.sql Script are not available to Execute"
@@ -173,15 +173,15 @@ foreach($SWDBName in $SWDATABASE){
     $SWSchemaScript = "$logfolder\SW_SCHEMA.sql"
     #RunScriptOnSWDB  $SWSchemaScript 
     if(Test-Path -Path $SWSchemaScript){
-        ExecuteSchemaScripts $SWSchemaScript $SWDBName.SW
+        ExecuteSchemaDataScripts $SWSchemaScript $SWDBName.SW
     }
     else{
         Write-Host "SW_SCHEMA.sql Script are not available to Execute"
     }
     
 }
-Write-Host "`n`t ************************ WEB SITE START ************************ `n"
-LogWrite " ************************ WEB SITE START ************************ "
+Write-Host "`n`t ************************ IIS STARTING ************************ `n"
+LogWrite " ************************ IIS STARTING ************************ "
 # Web Site Start
 .\WebSite_Start_Stop.ps1 'START'
 # Start publishFeatures script
@@ -206,24 +206,12 @@ $response = Read-Host "To Continue Click (Y/N)"
 
 if($response.ToUpper() -eq "Y")
 {
-    Write-Host "`n`t ****** `n"
-    .\WebSite_Start_Stop.ps1 'STOP'
-    # Start Afert deployment Database backup
-    LogWrite "Afetr Deployment Database Started"
-    # Start-Process .\MySQLDatabaseBackup_after.ps1 
-    Write-Host "`n`t ****** `n"
-    Write-Host "After build process DB Bakup started `n" -ForegroundColor Yellow
-    LogWrite "After build process DB Bakup started "
-    .\MySQLDatabaseBackup.ps1 'AFTER'
+    Write-Host "`n`t ********* Build Successfully Deployed ********* `n"
+    LogWrite "`n`t ********* Build Successfully Deployed ********* `n"
+    Write-Host "`n`t ********* Thank You! ********* "
 }
-else{
-    Write-Host "Database backup process Started without Publish feature`n" -ForegroundColor Yellow
-    LogWrite "Database backup process Started without Publish feature"
-    Write-Host "`n`t ****** `n"
-    .\WebSite_Start_Stop.ps1 'STOP'
-    # Start Afert deployment Database backup
-    LogWrite "Afetr Deployment Database Started"
-    # Start-Process .\MySQLDatabaseBackup_after.ps1 
-    Write-Host "`n`t ****** `n"
-    .\MySQLDatabaseBackup.ps1 'AFTER'
+elseif($response.ToUpper() -eq "N"){
+    Write-Host "`n If Publish Feature Failed then First do Publish Feature by Double click on 'PublishFeatures.bat' `n"
+    LogWrite "If Publish Feature Failed then First do Publish Feature by Double click on 'PublishFeatures.bat'"
+    Write-Host "`n`t ********* Thank You! ********* "
 }

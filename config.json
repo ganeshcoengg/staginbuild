@@ -1,66 +1,50 @@
 {
 "WebSite":[
-	{"SiteName": "pratibhaaccount.officebox.local"},
-	{"SiteName": "pratibhaauth.officebox.local"},
-	{"SiteName": "pratibhainventory.officebox.local"},
-	{"SiteName": "pratibhasap.officebox.local"},
-	{"SiteName": "pratibha.officebox.local"},
-	{"SiteName": "pratibhadashboard.officebox.local"}
-],
+		{"SiteName": "relerp.officebox.local"},
+		{"SiteName": "relerpaccount.officebox.local"},
+		{"SiteName": "relerpauth.officebox.local"},
+		{"SiteName": "relerpdashboard.officebox.local"},
+		{"SiteName": "relerpinventory.officebox.local"},
+		{"SiteName": "relerpsap.officebox.local"}
+			],
 "BuildSiteName":[
-	{"SiteName": "in-mvc-20"},
-	{"SiteName": "In.OfficeBox.Api.Auth"},
-	{"SiteName": "In.OfficeBox.Api.Dashboards"},
-	{"SiteName": "In.OfficeBox.Api.Inventory"},
-	{"SiteName": "In.OfficeBox.Api.Accounts"},
-	{"SiteName": "In.OfficeBox.Api.SAP"}
-],
+		{"SiteName": "in-mvc-20"},
+		{"SiteName": "In.OfficeBox.Api.Accounts"},
+		{"SiteName": "In.OfficeBox.Api.Auth"},
+		{"SiteName": "In.OfficeBox.Api.Dashboards"},
+		{"SiteName": "In.OfficeBox.Api.Inventory"},
+		{"SiteName": "In.OfficeBox.Api.SAP"}
+			],
 "ADMINDB":[
-	{"ADMIN": "officebox_admin_pfl"}
-],
+		{"ADMIN": "officebox_admin_asc"}
+		 ],
 "SADB":	[
-	{"SA": "pflsa_10000000000000212"}
-],
+	{"SA": "ascsa_10000000000000167"}
+		],
 "STDB":[
-	{"ST": "pflst_10000000000000212_10000000000019315_10000000000019647"}
-],
+	{"ST": "ascst_10000000000000167_10000000000019315_10000000000019629"},
+	{"ST": "ascst_10000000000000167_10000000000019632_10000000000020063"}
+		],	
 "SWDB": [
-	{"SW": "pflsw_10000000000000212"}
-],
+		{"SW": "ascsw_10000000000000167"}
+		],
 
 "MySQLServer":[
-	{"DBHost": "localhost"}
-],
+		{"DBHost": "172.16.2.107"}
+			],
 			
 "MySQLUserName":[
-	{"UserName": "root"}
-],
+		{"UserName": "root"}
+			],
 
 "MySQLPassword":[
-	{"Password": "admin"}
-],
+		{"Password": "admin"}
+			],
 			
 "FolderPath":[
-	{"Path": "E:\\Officebox\\inetpub\\wwwroot\\"}
-],
-			
-"SiteBackupPath":[
-	{"Path": "E:\\Officebox\\OFFICEBOX_DEPLOYMENT\\SITE_BACKUP\\"}
-],
-				
-"DatabaseBackupPath":[
-	{"Path": "E:\\Officebox\\OFFICEBOX_DEPLOYMENT\\DATA_BACKUP\\"}
-],			
-
-"ToBeDeployedPath":[
-	{"Path": "E:\\Officebox\\OFFICEBOX_DEPLOYMENT\\TOBEDEPLOYED\\"}
-],
-
+		{"Path": "D:\\officebox\\Inetpub\\wwwroot\\"}
+			 ],
 "BuildLogsPath":[
-	{"Path": "E:\\Officebox\\OFFICEBOX_DEPLOYMENT\\BUILD_LOGS\\"}
-],
-	"WithTrigger":{ "isTrigger" : "yes" },
-	"BuildVersion" : { "version" : ""},
-	"CustomerName" : { "Name" : ""},
-	"ERPorCnF" : { "isERPorCnF" : ""}
+		{"Path": "D:\\OFFICEBOX_DEPLOYMENT\\ERP\\tfs2017_ITINFRA\\BUILD_LOGS\\"}
+]
 }
