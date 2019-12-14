@@ -1,50 +1,28 @@
 {
 "WebSite":[
-		{"SiteName": "relerp.officebox.local"},
-		{"SiteName": "relerpaccount.officebox.local"},
-		{"SiteName": "relerpauth.officebox.local"},
-		{"SiteName": "relerpdashboard.officebox.local"},
-		{"SiteName": "relerpinventory.officebox.local"},
-		{"SiteName": "relerpsap.officebox.local"}
+		{"SiteName": "siteName.url"}
 			],
 "BuildSiteName":[
-		{"SiteName": "in-mvc-20"},
-		{"SiteName": "In.OfficeBox.Api.Accounts"},
-		{"SiteName": "In.OfficeBox.Api.Auth"},
-		{"SiteName": "In.OfficeBox.Api.Dashboards"},
-		{"SiteName": "In.OfficeBox.Api.Inventory"},
-		{"SiteName": "In.OfficeBox.Api.SAP"}
+		{"SiteName": "buildName"}
 			],
-"ADMINDB":[
-		{"ADMIN": "officebox_admin_asc"}
+"MasterDB":[
+		{"ADMIN": "DatabaseName"}
 		 ],
-"SADB":	[
-	{"SA": "ascsa_10000000000000167"}
-		],
-"STDB":[
-	{"ST": "ascst_10000000000000167_10000000000019315_10000000000019629"},
-	{"ST": "ascst_10000000000000167_10000000000019632_10000000000020063"}
-		],	
-"SWDB": [
-		{"SW": "ascsw_10000000000000167"}
-		],
-
 "MySQLServer":[
-		{"DBHost": "172.16.2.107"}
+		{"DBHost": "ServerName"}
 			],
-			
 "MySQLUserName":[
 		{"UserName": "root"}
 			],
 
 "MySQLPassword":[
-		{"Password": "admin"}
+		{"Password": "Password"}
 			],
 			
 "FolderPath":[
-		{"Path": "D:\\officebox\\Inetpub\\wwwroot\\"}
+		{"Path": "D:\\filepath\\Inetpub\\wwwroot\\"}
 			 ],
 "BuildLogsPath":[
-		{"Path": "D:\\OFFICEBOX_DEPLOYMENT\\ERP\\tfs2017_ITINFRA\\BUILD_LOGS\\"}
+		{"Path": "D:\\DEPLOYMENT\\BUILD_LOGS\\"}
 ]
 }

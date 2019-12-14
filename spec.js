@@ -13,19 +13,17 @@ describe('To do login to Connect Plus', function() {
 
 	browser.waitForAngularEnabled(false);
     browser.driver.manage().window().maximize();
-	browser.driver.get('http://relerp.officebox.local/ap/frmLogin.aspx');
+	browser.driver.get('http://xyzsiteName.co.in/ap/formLogin.aspx');
 	
-	//var a = element(by.id('txtUserName'));
-	//var b = element(by.id('txtPsswrd'));
-	browser.driver.findElement(by.id('txtUserName')).sendKeys('obadmin');
-    browser.driver.findElement(by.id('txtPsswrd')).sendKeys('admin123');
+	browser.driver.findElement(by.id('txtUserName')).sendKeys('userName');
+    browser.driver.findElement(by.id('txtPsswrd')).sendKeys('password');
 	browser.driver.sleep(10000);
 	browser.driver.findElement(by.id('userEntry_imgLogin')).click();
 	browser.driver.sleep(10000);
 	browser.driver.findElement(by.css('#cphPageContent_blstTrnsctn > li:nth-child(2) > a')).click();
 	browser.driver.sleep(10000);
 	//userEntry_imgLogin
-	browser.driver.findElement(by.id('cphPageContent_cphQueryPanelContent_ucPblshFtreCntrl_ddlPlan')).sendKeys('OB iCRM + iLekha');	
+	browser.driver.findElement(by.id('cphPageContent_cphQueryPanelContent_ucPblshFtreCntrl_ddlPlan')).sendKeys('buttonName');	
 	browser.driver.findElement(by.id('cphPageContent_cphQueryPanelContent_ucPblshFtreCntrl_lnkFetch')).click();
 	browser.driver.sleep(10000);
     browser.driver.findElement(by.id('cphPageContent_cphQueryPanelContent_ucPblshFtreCntrl_lnkPblshForAdminUsers')).click()
